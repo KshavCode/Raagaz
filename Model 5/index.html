@@ -10,10 +10,10 @@
 
 <style>
     :root {
-        --bg-color: #FAFAFA;       /* Very light grey/white for cleanliness */
-        --text-main: #1A1A1A;      /* Sharp Black */
-        --text-sub: #666666;       /* Soft Grey */
-        --accent: #D9534F;         /* Muted Red/Terracotta for energy */
+        --bg-color: #FAFAFA;       
+        --text-main: #1A1A1A;      
+        --text-sub: #666666;       
+        --accent: #D9534F;        
         --border: #E5E5E5;
     }
 
@@ -38,7 +38,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem 8%;
-        border-bottom: 1px solid var(--border); /* Subtle divider */
+        border-bottom: 1px solid var(--border); /* divider */
         background: var(--bg-color);
     }
 
@@ -82,13 +82,12 @@
         color: white;
     }
 
-    /* --- Main Layout (Split Screen) --- */
     .hero-section {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 4rem 8%;
-        flex: 1; /* Takes remaining height */
+        flex: 1; 
         gap: 4rem;
     }
 
@@ -135,7 +134,7 @@
         padding: 10px 20px;
         border: 1px solid var(--border);
         background: white;
-        border-radius: 50px; /* Pill shape */
+        border-radius: 50px; 
         font-size: 0.9rem;
         color: var(--text-sub);
         cursor: default;
@@ -145,7 +144,7 @@
     .pill:hover {
         border-color: var(--accent);
         color: var(--accent);
-        background-color: #fff5f5; /* Very faint red tint on hover */
+        background-color: #fff5f5; 
     }
 
     /* Right Content (Image) */
@@ -166,12 +165,10 @@
         position: relative;
     }
 
-    /* Using object-fit cover to ensure the image fills the frame perfectly */
     .hero-img {
         width: 100%;
         height: 100%;
         object-fit: cover; 
-        /* Subtle zoom effect on hover */
         transition: transform 0.5s ease;
     }
 

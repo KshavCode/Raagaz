@@ -8,11 +8,11 @@
 
 <style>
     :root {
-        --first-color: #FCF9EA;   /* Cream */
-        --second-color: #BADFDB;  /* Teal */
-        --third-color: #FFA4A4;   /* Salmon */
-        --fourth-color: #FFBDBD;  /* Light Pink */
-        --accent-gold: #FDBB2D;   /* From your gradient */
+        --first-color: #FCF9EA;   
+        --second-color: #BADFDB;  
+        --third-color: #FFA4A4;  
+        --fourth-color: #FFBDBD;  
+        --accent-gold: #FDBB2D;  
         --text-dark: #2c3e50;
     }
 
@@ -24,7 +24,6 @@
 
     body {
         background-color: var(--first-color);
-        /* Keeping your preferred font stack */
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color: var(--text-dark);
         overflow-x: hidden;
@@ -61,11 +60,9 @@
         color: var(--third-color);
     }
 
-    /* --- Hero Section (Your Canvas) --- */
     .canvas {
         /* Changed height to min-height for responsiveness */
         min-height: 100vh; 
-        /* Your original gradient */
         background: linear-gradient(0deg, var(--first-color) 0%, var(--fourth-color) 100%);
         display: flex;
         align-items: center;
@@ -79,14 +76,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end; /* Aligns text to the right like your original */
+        align-items: flex-end;
         text-align: right;
         z-index: 2;
         padding-top: 50px;
     }
 
     .canvas-title {
-        font-size: 8vw; /* Kept your large size */
+        font-size: 8vw;
         line-height: 1;
         font-weight: bold;
         color: #333;
@@ -139,7 +136,7 @@
         width: 100%;
         max-width: 600px;
         filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.2));
-        /* Subtle floating animation */
+        /* floating animation */
         animation: float 4s ease-in-out infinite;
     }
 
@@ -148,7 +145,7 @@
         50% { transform: translateY(-15px); }
     }
 
-    /* --- Cards Section --- */
+    /* --- Cards --- */
     .section {
         padding: 5rem 5%;
     }
@@ -196,7 +193,7 @@
 
     /* --- About Section --- */
     .about {
-        background-color: var(--second-color); /* Teal background */
+        background-color: var(--second-color); 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -209,7 +206,7 @@
 
     /* --- Contact Section --- */
     .contact {
-        background-color: var(--fourth-color); /* Pink background */
+        background-color: var(--fourth-color); 
     }
     
     .contact-container {

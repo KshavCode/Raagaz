@@ -12,9 +12,9 @@
 <style>
     :root {
         --bg: #ffffff;
-        --text-main: #1e293b; /* Deep Navy, softer than black */
+        --text-main: #1e293b;
         --text-light: #64748b;
-        --accent: #d4af37; /* Classic Gold */
+        --accent: #d4af37; 
         --staff-line: rgba(0, 0, 0, 0.05);
     }
 
@@ -63,11 +63,10 @@
         position: absolute;
         font-size: 2rem;
         color: var(--text-main);
-        opacity: 0.1; /* Very subtle */
+        opacity: 0.1; 
         animation: floatMelody 15s linear infinite;
     }
 
-    /* Random positions for notes */
     .n1 { top: 45%; left: -5%; animation-delay: 0s; }
     .n2 { top: 52%; left: -5%; animation-delay: 4s; font-size: 1.5rem; }
     .n3 { top: 48%; left: -5%; animation-delay: 8s; font-size: 2.5rem; }
@@ -111,12 +110,11 @@
         color: var(--accent);
     }
 
-    /* --- Hero Section --- */
     .hero {
         display: flex;
         align-items: center;
-        justify-content: center; /* Center everything */
-        text-align: center;      /* Center text */
+        justify-content: center;
+        text-align: center;  
         flex-direction: column;
         padding: 4rem 10%;
         min-height: 80vh;
@@ -154,7 +152,6 @@
         margin-bottom: 3rem;
     }
 
-    /* --- Minimal Cards Container --- */
     .cards-row {
         display: flex;
         gap: 20px;
@@ -178,7 +175,7 @@
 
     .glass-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); /* Gold glow on hover */
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
         border-color: var(--accent);
     }
 

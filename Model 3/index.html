@@ -12,10 +12,10 @@
 
 <style>
     :root {
-        --bg-color: #fdfbf7; /* Warm sheet-music white */
+        --bg-color: #fdfbf7; 
         --text-main: #2c3e50;
-        --accent: #d35400; /* Burnt Orange for energy */
-        --note-color: rgba(44, 62, 80, 0.2); /* Faint black for background notes */
+        --accent: #d35400; 
+        --note-color: rgba(44, 62, 80, 0.2); 
     }
 
     * {
@@ -41,7 +41,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        z-index: -1; /* Behind everything */
+        z-index: -1; 
         pointer-events: none;
     }
 
@@ -53,7 +53,6 @@
         animation: floatUp linear infinite;
     }
 
-    /* Specific positions and delays for randomness */
     .note:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
     .note:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: 2s; font-size: 4rem; }
     .note:nth-child(3) { left: 50%; animation-duration: 10s; animation-delay: 4s; }
@@ -102,7 +101,6 @@
         color: var(--accent);
     }
 
-    /* --- Hero Section --- */
     .hero {
         display: flex;
         align-items: center;
@@ -172,7 +170,7 @@
         background-color: var(--accent);
     }
 
-    /* Hero Image Area */
+    /* Hero Image */
     .hero-img-container {
         flex: 1;
         display: flex;
@@ -183,7 +181,6 @@
     .hero-img {
         width: 100%;
         max-width: 450px;
-        /* A subtle drop shadow to pop off the light background */
         filter: drop-shadow(20px 20px 0px rgba(0,0,0,0.05)); 
         border-radius: 20px;
     }

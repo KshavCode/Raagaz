@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaagaZ | Music & Dance Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    :root {
+        --first-color: #FCF9EA;   /* Cream */
+        --second-color: #BADFDB;  /* Teal */
+        --third-color: #FFA4A4;   /* Salmon */
+        --fourth-color: #FFBDBD;  /* Light Pink */
+        --accent-gold: #FDBB2D;   /* From your gradient */
+        --text-dark: #2c3e50;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--first-color);
+        /* Keeping your preferred font stack */
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: var(--text-dark);
+        overflow-x: hidden;
+    }
+
+    /* --- Navigation --- */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 5%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #444;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #444;
+        margin-left: 2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--third-color);
+    }
+
+    /* --- Hero Section (Your Canvas) --- */
+    .canvas {
+        /* Changed height to min-height for responsiveness */
+        min-height: 100vh; 
+        /* Your original gradient */
+        background: linear-gradient(0deg, var(--first-color) 0%, var(--fourth-color) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        position: relative;
+    }
+
+    .canvas-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end; /* Aligns text to the right like your original */
+        text-align: right;
+        z-index: 2;
+        padding-top: 50px;
+    }
+
+    .canvas-title {
+        font-size: 8vw; /* Kept your large size */
+        line-height: 1;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 0px rgba(255,255,255,0.3);
+    }
+
+    .canvas-title2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 1rem;
+    }
+
+    .canvas-title3 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background-color: rgba(255,255,255,0.4);
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+    }
+
+    .cta-btn {
+        margin-top: 2rem;
+        padding: 15px 40px;
+        background-color: var(--text-dark);
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        background-color: var(--third-color);
+        color: black;
+        transform: translateY(-3px);
+    }
+
+    .img-container {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center image on left side */
+    }
+
+    .canvas-img {
+        width: 100%;
+        max-width: 600px;
+        filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.2));
+        /* Subtle floating animation */
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    /* --- Cards Section --- */
+    .section {
+        padding: 5rem 5%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: white;
+        border: 2px solid transparent;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        background-color: var(--second-color);
+    }
+
+    .card i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #555;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* --- About Section --- */
+    .about {
+        background-color: var(--second-color); /* Teal background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 800px;
+    }
+
+    /* --- Contact Section --- */
+    .contact {
+        background-color: var(--fourth-color); /* Pink background */
+    }
+    
+    .contact-container {
+        text-align: center;
+    }
+
+    footer {
+        background-color: #333;
+        color: var(--first-color);
+        text-align: center;
+        padding: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .canvas { flex-direction: column-reverse; justify-content: center; text-align: center; padding-top: 100px; }
+        .canvas-content { align-items: center; text-align: center; margin-bottom: 2rem; }
+        .canvas-title { font-size: 4rem; }
+        .nav-links { display: none; }
+        .canvas-img { max-width: 80%; margin-bottom: 20px; }
+    }
+
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RaagaZ.</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#classes">Classes</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="canvas" id="home">
+        <div class="img-container">
+            <img src="images/piano.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2907/2907253.png'" alt="Instruments" class="canvas-img">
+        </div>
+
+        <div class="canvas-content">
+            <p class="canvas-title">RaagaZ</p>
+            <p class="canvas-title2">Music & Dance Academy</p>
+            <p class="canvas-title3">Guitar | Piano | Vocals | Dance</p>
+            <a href="#contact" class="cta-btn">Join Today</a>
+        </div>
+    </header>
+
+    <section class="section" id="classes">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-guitar"></i>
+                <h3>Guitar</h3>
+                <p>Acoustic & Electric mastery.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-music"></i>
+                <h3>Piano</h3>
+                <p>Classical to Contemporary.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Vocals</h3>
+                <p>Find your true voice.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-running"></i>
+                <h3>Dance</h3>
+                <p>Express through movement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="about-text">
+            <h2 class="section-title">Why RaagaZ?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                At RaagaZ, we believe that art is the language of the soul. 
+                Whether you want to strum strings, hit the high notes, or paint your imagination, 
+                we provide the perfect environment to nurture your talent.
+            </p>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Visit Us</h2>
+            <p style="font-size: 1.5rem; font-weight: bold;">Open for Admissions</p>
+            <br>
+            <a href="mailto:info@raagaz.com" class="cta-btn" style="background: white; color: black;">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RaagaZ Music & Dance Academy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

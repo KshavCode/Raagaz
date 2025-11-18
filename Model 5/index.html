@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaagaZ | Music & Dance Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #FAFAFA;       /* Very light grey/white for cleanliness */
+        --text-main: #1A1A1A;      /* Sharp Black */
+        --text-sub: #666666;       /* Soft Grey */
+        --accent: #D9534F;         /* Muted Red/Terracotta for energy */
+        --border: #E5E5E5;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-main);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --- Simple Navigation --- */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 8%;
+        border-bottom: 1px solid var(--border); /* Subtle divider */
+        background: var(--bg-color);
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text-main);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-sub);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    .btn-contact {
+        padding: 10px 24px;
+        border: 1px solid var(--text-main);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--text-main);
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+    }
+
+    .btn-contact:hover {
+        background-color: var(--text-main);
+        color: white;
+    }
+
+    /* --- Main Layout (Split Screen) --- */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 8%;
+        flex: 1; /* Takes remaining height */
+        gap: 4rem;
+    }
+
+    /* Left Content */
+    .content-left {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .small-tag {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 4.5rem;
+        line-height: 1.1;
+        color: var(--text-main);
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--text-sub);
+        margin-bottom: 2.5rem;
+    }
+
+    /* Clean Grid for Services */
+    .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .pill {
+        padding: 10px 20px;
+        border: 1px solid var(--border);
+        background: white;
+        border-radius: 50px; /* Pill shape */
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        cursor: default;
+        transition: all 0.2s ease;
+    }
+
+    .pill:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background-color: #fff5f5; /* Very faint red tint on hover */
+    }
+
+    /* Right Content (Image) */
+    .content-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .image-frame {
+        width: 100%;
+        max-width: 500px;
+        height: 600px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Using object-fit cover to ensure the image fills the frame perfectly */
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        /* Subtle zoom effect on hover */
+        transition: transform 0.5s ease;
+    }
+
+    .image-frame:hover .hero-img {
+        transform: scale(1.03);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .hero-section {
+            flex-direction: column;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .content-right {
+            justify-content: center;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .image-frame {
+            height: 400px;
+        }
+
+        .nav-links { display: none; }
+        h1 { font-size: 3rem; }
+        .services-list { justify-content: center; }
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RaagaZ</div>
+        
+        <div class="nav-links">
+            <a href="#">Notes</a>
+            <a href="#">Instructors</a>
+            <a href="#">Gallery</a>
+        </div>
+
+        <a href="#" class="btn-contact">Get in Touch</a>
+    </nav>
+
+    <main class="hero-section">
+        <div class="content-left">
+            <span class="small-tag">Est. 2024</span>
+            <h1>RaagaZ Academy</h1>
+            <h2>Where passion meets discipline.</h2>
+            
+            <div class="services-list">
+                <span class="pill">Guitar</span>
+                <span class="pill">Piano</span>
+                <span class="pill">Vocals</span>
+                <span class="pill">Music Recording</span>
+                <span class="pill">Dance</span>
+                <span class="pill">Art & Craft</span>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <div class="image-frame">
+                <img src="images/piano.png" alt="Music Education" class="hero-img">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

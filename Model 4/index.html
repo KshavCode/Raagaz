@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaagaZ | Elegant Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    :root {
+        --bg: #ffffff;
+        --text-main: #1e293b; /* Deep Navy, softer than black */
+        --text-light: #64748b;
+        --accent: #d4af37; /* Classic Gold */
+        --staff-line: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--bg);
+        font-family: 'Outfit', sans-serif;
+        color: var(--text-main);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .music-staff-bg {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        transform: translateY(-50%);
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    /* --- Animated Floating Notes --- */
+    .floating-notes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .note {
+        position: absolute;
+        font-size: 2rem;
+        color: var(--text-main);
+        opacity: 0.1; /* Very subtle */
+        animation: floatMelody 15s linear infinite;
+    }
+
+    /* Random positions for notes */
+    .n1 { top: 45%; left: -5%; animation-delay: 0s; }
+    .n2 { top: 52%; left: -5%; animation-delay: 4s; font-size: 1.5rem; }
+    .n3 { top: 48%; left: -5%; animation-delay: 8s; font-size: 2.5rem; }
+    .n4 { top: 55%; left: -5%; animation-delay: 12s; }
+
+    @keyframes floatMelody {
+        0% { transform: translateX(0) translateY(0) rotate(0deg); left: -5%; opacity: 0; }
+        20% { opacity: 0.2; }
+        80% { opacity: 0.2; }
+        100% { transform: translateX(110vw) translateY(-20px) rotate(20deg); left: 100%; opacity: 0; }
+    }
+
+    /* --- Navigation --- */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 10%;
+    }
+
+    .logo {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2rem;
+        color: var(--text-main);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-main);
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center everything */
+        text-align: center;      /* Center text */
+        flex-direction: column;
+        padding: 4rem 10%;
+        min-height: 80vh;
+        position: relative;
+    }
+
+    .sub-tag {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+
+    h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 5rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        max-width: 900px;
+    }
+
+    h1 span {
+        font-style: italic;
+        color: var(--text-light);
+    }
+
+    .desc {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 600px;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+    }
+
+    /* --- Minimal Cards Container --- */
+    .cards-row {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0,0,0,0.05);
+        padding: 20px 30px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        min-width: 200px;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); /* Gold glow on hover */
+        border-color: var(--accent);
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        background-color: #f8f8f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-main);
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+
+    .glass-card:hover .icon-box {
+        background-color: var(--accent);
+        color: white;
+    }
+
+    .card-text {
+        text-align: left;
+    }
+
+    .card-text h4 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .card-text p {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        margin-top: 2px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 3rem; }
+        .nav-links { display: none; }
+        .cards-row { flex-direction: column; width: 100%; }
+        .glass-card { width: 100%; }
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="floating-notes">
+        <div class="note n1">♪</div>
+        <div class="note n2">♫</div>
+        <div class="note n3">𝄢</div>
+        <div class="note n4">♩</div>
+    </div>
+
+    <nav>
+        <div class="logo">RaagaZ</div>
+        <div class="nav-links">
+            <a href="#">Curriculum</a>
+            <a href="#">Mentors</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="sub-tag">EST. 2024</span>
+        <h1>Where Silence Becomes <br><span>Masterpiece.</span></h1>
+        <p class="desc">RaagaZ is the premier academy for musical excellence. 
+        Join a community dedicated to the craft of sound, rhythm, and performance.</p>
+
+        <div class="cards-row">
+            <div class="glass-card">
+                <div class="icon-box"><i class="fas fa-guitar"></i></div>
+                <div class="card-text">
+                    <h4>Strings</h4>
+                    <p>Guitar & Violin</p>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="icon-box"><i class="fas fa-music"></i></div>
+                <div class="card-text">
+                    <h4>Keys</h4>
+                    <p>Piano & Synth</p>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="icon-box"><i class="fas fa-microphone-lines"></i></div>
+                <div class="card-text">
+                    <h4>Voice</h4>
+                    <p>Classical & Pop</p>
+                </div>
+            </div>
+            
+             <div class="glass-card">
+                <div class="icon-box"><i class="fas fa-person-running"></i></div> <div class="card-text">
+                    <h4>Movement</h4>
+                    <p>Contemporary Dance</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
